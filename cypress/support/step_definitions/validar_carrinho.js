@@ -2,6 +2,7 @@ import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
 Given("que estou na página do produto com ID {string}", (produtoId) => {
     cy.visit('/');
+    cy.wait(4000);
     cy.get(`#laptopsImg`).click();
     cy.get(`img#${produtoId}`).click();
     cy.url().should('include', `/product/${produtoId}`);
